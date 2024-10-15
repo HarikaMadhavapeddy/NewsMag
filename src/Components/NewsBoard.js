@@ -8,8 +8,15 @@ export default function NewsBoard({category}) {
   //console.log(apiKey);
   useEffect(() => {
     console.log(category);
-    axios
-      .get(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`)
+    /*axios
+      .get(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`)*/
+      axios.get("https://news-app-hazel-seven.vercel.app/news", {
+        params: {
+          country: "us",
+          category,
+          apiKey, // Use your News API key here
+        },
+      })
       .then((response) => {
         setArticles(response.data.articles);
       })
