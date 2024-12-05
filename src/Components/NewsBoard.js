@@ -8,8 +8,9 @@ export default function NewsBoard({category}) {
   //console.log(apiKey);
   useEffect(() => {
     console.log(category);
+    //http://localhost:8080/news?country=us&category=general&apiKey=17564644f1a74c62b369028819d77324
     axios
-      .get(`https://newsappbackend-six.vercel.app/news?country=us&category=${category}&apiKey=${apiKey}`)
+      .get(`https://new-mag-backend.vercel.app/news?country=us&category=${category}&apiKey=${apiKey}`)
       .then((response) => {
         setArticles(response.data.articles);
       })
